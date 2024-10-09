@@ -3,9 +3,9 @@ letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
 number = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
 symbols = ['!', '#', '$', '%', '&', '*', '+', '(', ')']
 
-letters_count = int(input("How many letters would you like in your password? \n"))
-numbers_count = int(input("How many numbers would you like in your password? \n"))
-symbols_count = int(input("How many symbols would you like in your password? \n"))
+letters_count = int(input("How many letters would you like in your password? "))
+numbers_count = int(input("How many numbers would you like in your password? "))
+symbols_count = int(input("How many symbols would you like in your password? "))
 
 pass_list = []
 for i in range(0, letters_count):
@@ -17,5 +17,9 @@ for j in range(0, numbers_count):
 for k in range(0, symbols_count):
     ran_symbol = random.choice(symbols)
     pass_list.append(ran_symbol)
+random.shuffle(pass_list)
 
-print("Your password is", pass_list)
+password = ""
+for word in pass_list:
+    password += word
+print("Your password is: ", password)
